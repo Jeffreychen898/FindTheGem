@@ -164,6 +164,7 @@
     <ClCompile Include="GameDevLib\Renderer\Shader\Shader.cpp" />
     <ClCompile Include="GameDevLib\Renderer\Texture\Texture.cpp" />
     <ClCompile Include="GameDevLib\Renderer\Window\Window.cpp" />
+    <ClCompile Include="src\GameStates\Game\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +183,9 @@
     <ClInclude Include="GameDevLib\Renderer\Shader\Shader.h" />
     <ClInclude Include="GameDevLib\Renderer\Texture\Texture.h" />
     <ClInclude Include="GameDevLib\Renderer\Window\Window.h" />
+    <ClInclude Include="src\GameStates\gamestates.h" />
+    <ClInclude Include="src\GameStates\Game\Game.h" />
+    <ClInclude Include="src\GameStates\template.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

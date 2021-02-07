@@ -20,13 +20,16 @@ namespace Rendering
 
 		Rendering::Renderer* m_renderer;
 	public:
-		Window(unsigned int width, unsigned int height, const char* title);
+		Window();
 		~Window();
 
+		void Init(unsigned int width, unsigned int height, const char* title);
 		bool WindowShouldClose() const { return glfwWindowShouldClose(m_window); };
 		void StartOfFrame();
 		void EndOfFrame();
 		void Terminate() { glfwTerminate(); };
+
+		void SetKeyCallback(GLFWkeyfun callback) const { glfwSetKeyCallback(m_window, callback); };
 
 		void AccessRenderer(Rendering::Renderer* renderer) { m_renderer = renderer; };
 

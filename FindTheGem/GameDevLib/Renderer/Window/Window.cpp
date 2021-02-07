@@ -2,14 +2,18 @@
 
 namespace Rendering
 {
-	Window::Window(unsigned int width, unsigned int height, const char* title)
+	Window::Window()
 		: m_deltaTime(0), m_frameRate(0), m_renderer(nullptr)
+	{
+	}
+
+	void Window::Init(unsigned int width, unsigned int height, const char* title)
 	{
 		m_width = width;
 		m_height = height;
-        glfwInit();
-        m_window = glfwCreateWindow(width, height, title, NULL, NULL);
-        glfwMakeContextCurrent(m_window);
+		glfwInit();
+		m_window = glfwCreateWindow(width, height, title, NULL, NULL);
+		glfwMakeContextCurrent(m_window);
 		m_previousTime = std::chrono::high_resolution_clock::now();
 	}
 
