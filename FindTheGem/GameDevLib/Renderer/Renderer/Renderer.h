@@ -14,8 +14,7 @@
 #include "../../Math/Math.h"
 #include "../Texture/Texture.h"
 #include "../Font/Font.h"
-
-typedef GameLibMath::Matrix4 GameCamera;
+#include "../Camera/Camera.h"
 
 namespace Rendering
 {
@@ -147,8 +146,6 @@ namespace Rendering
 
 		Layers SingleLayer(unsigned int layer) const { return { m_defaultShader, {layer} }; };
 		Layers SingleLayer(Rendering::Shader shader, unsigned int layer) const { return { shader, {layer} }; };
-
-		void CreateCamera2D(GameLibMath::Matrix4& camera, float left, float right, float top, float bottom);
 	private:
 		void MakeDrawCall();
 

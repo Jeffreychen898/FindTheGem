@@ -1,7 +1,6 @@
 #include <vector>
 
 #include "../GameDevLib/Renderer/Rendering.h"
-#include "../GameDevLib/Math/Math.h"
 
 #include "GameStates/gamestates.h"
 
@@ -34,6 +33,25 @@ int main()
     /* window event callback */
     window.SetKeyCallback(key_pressed);
 
+    /* layers and camera */
+    std::vector<std::pair<unsigned int, Rendering::GameCamera*>> layers;
+    layers.reserve(4);
+
+    Rendering::GameCamera background_camera;
+    Rendering::GameCamera foreground_camera;
+    Rendering::GameCamera user_interface_camera;
+
+    unsigned int background_layer, foreground_layer, post_processing_layer, user_interface_layer;
+    renderer.CreateLayer(background_layer, &background_camera);
+    renderer.CreateLayer(foreground_layer, &foreground_camera);
+    renderer.CreateLayer(post_processing_layer, &foreground_camera);
+    renderer.CreateLayer(user_interface_layer, &user_interface_camera);
+
+    layers.push_back({ background_layer, &background_camera });
+    layers.push_back({ foreground_layer, &foreground_camera });
+    layers.push_back({ post_processing_layer, &foreground_camera });
+    layers.push_back({ user_interface_layer, &user_interface_camera });
+
     /* game states */
     game_state = 0;
     states.reserve(1);
@@ -45,8 +63,8 @@ int main()
         window.StartOfFrame();
         std::cout << "[FPS]: " << window.GetFrameRate() << "\n";
 
-        states.at(game_state)->Update();
-        states.at(game_state)->Render();
+        states.at(game_state)->Update(layers);
+        states.at(game_state)->Render(renderer, layers);
 
         /* end of the frame */
         window.EndOfFrame();

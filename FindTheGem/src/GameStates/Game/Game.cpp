@@ -2,12 +2,12 @@
 
 namespace GameStates
 {
-	void Game::Render()
+	void Game::Render(Rendering::Renderer& renderer, std::vector<std::pair<unsigned int, Rendering::GameCamera*>>& layers)
 	{
 		//std::cout << "rendering\n";
 	}
 	
-	void Game::Update()
+	void Game::Update(std::vector<std::pair<unsigned int, Rendering::GameCamera*>>& layers)
 	{
 		//std::cout << "updating\n";
 	}

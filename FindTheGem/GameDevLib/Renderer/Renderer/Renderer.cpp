@@ -504,21 +504,6 @@ namespace Rendering
 		m_colorCounter += 16;
 	}
 
-	void Renderer::CreateCamera2D(GameLibMath::Matrix4& camera, float left, float right, float top, float bottom)
-	{
-		float r_minus_l = right - left;
-		float r_plus_l = right + left;
-		float t_minus_b = top - bottom;
-		float t_plus_b = top + bottom;
-		float projection_matrix[16] = {
-			2.f / r_minus_l, 0.f, 0.f, 0.f,
-			0.f, 2.f / (t_minus_b), 0.f, 0.f,
-			0.f, 0.f, 1.f, 0.f,
-			-(r_plus_l / r_minus_l), -(t_plus_b / t_minus_b), 0.f, 1.f
-		};
-		camera.MultiplyRawMatrix(&projection_matrix[0]);
-	}
-
 	Renderer::~Renderer()
 	{
 		delete[] m_positions;

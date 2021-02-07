@@ -154,6 +154,7 @@
     <ClCompile Include="GameDevLib\ExternalResources\stb_image\stb_image.cpp" />
     <ClCompile Include="GameDevLib\Math\Matrix4\Matrix4.cpp" />
     <ClCompile Include="GameDevLib\Math\Vector4\Vector4.cpp" />
+    <ClCompile Include="GameDevLib\Renderer\Camera\Camera.cpp" />
     <ClCompile Include="GameDevLib\Renderer\Font\Font.cpp" />
     <ClCompile Include="GameDevLib\Renderer\GLBufferedObjects\FrameBufferObject\FrameBufferObject.cpp" />
     <ClCompile Include="GameDevLib\Renderer\GLBufferedObjects\IndexBufferObject\IndexBufferObject.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="GameDevLib\Math\Math.h" />
     <ClInclude Include="GameDevLib\Math\Matrix4\Matrix4.h" />
     <ClInclude Include="GameDevLib\Math\Vector4\Vector4.h" />
+    <ClInclude Include="GameDevLib\Renderer\Camera\Camera.h" />
     <ClInclude Include="GameDevLib\Renderer\Font\Font.h" />
     <ClInclude Include="GameDevLib\Renderer\GLBufferedObjects\FrameBufferObject\FrameBufferObject.h" />
     <ClInclude Include="GameDevLib\Renderer\GLBufferedObjects\IndexBufferObject\IndexBufferObject.h" />
