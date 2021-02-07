@@ -1,21 +1,2 @@
-﻿  stb_image.cpp
-  Matrix4.cpp
-  Vector4.cpp
-  Camera.cpp
-  Font.cpp
-  FrameBufferObject.cpp
-  IndexBufferObject.cpp
-  UniformBufferObject.cpp
-  VertexArrayObject.cpp
-  Layer.cpp
-  Renderer.cpp
-  Shader.cpp
-  Texture.cpp
-  Window.cpp
-  Game.cpp
-  main.cpp
-  Generating Code...
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\Jeffr\Desktop\C++ Workspace\Games\FindTheGem\FindTheGem\Debug\vc120.pdb'; linking object as if no debug info
+﻿  Game.cpp
   FindTheGem.vcxproj -> C:\Users\Jeffr\Desktop\C++ Workspace\Games\FindTheGem\FindTheGem\Debug\FindTheGem.exe

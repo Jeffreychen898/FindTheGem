@@ -453,8 +453,8 @@ namespace Rendering
 
 			for (unsigned int i = 0; i < layer.layers.size(); ++i)
 				glBindTextureUnit(i, m_layers.at(layer.layers.at(i)).GetTexture());
+			MakeDrawCall();
 		}
-		MakeDrawCall();
 		m_currentTexture = m_whiteTexture.GetTexture();
 		m_whiteTexture.Bind();
 	}

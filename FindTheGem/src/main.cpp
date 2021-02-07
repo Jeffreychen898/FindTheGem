@@ -41,6 +41,10 @@ int main()
     Rendering::GameCamera foreground_camera;
     Rendering::GameCamera user_interface_camera;
 
+    background_camera.Create2DCamera(0, (float)window_width, 0, (float)window_height);
+    foreground_camera.Create2DCamera(0, (float)window_width, 0, (float)window_height);
+    user_interface_camera.Create2DCamera(0, (float)window_width, 0, (float)window_height);
+
     unsigned int background_layer, foreground_layer, post_processing_layer, user_interface_layer;
     renderer.CreateLayer(background_layer, &background_camera);
     renderer.CreateLayer(foreground_layer, &foreground_camera);
