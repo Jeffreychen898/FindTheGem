@@ -13,6 +13,9 @@ namespace Rendering
 		unsigned int m_textureID;
 		int m_textureWidth;
 		int m_textureHeight;
+
+		std::pair<float, float> m_topLeftPosition;
+		std::pair<float, float> m_bottomRightPosition;
 	public:
 		Texture();
 		~Texture();
@@ -25,5 +28,10 @@ namespace Rendering
 		unsigned int GetTexture() const { return m_textureID; };
 		unsigned int GetTextureWidth() const { return (unsigned int)m_textureWidth; };
 		unsigned int GetTextureHeight() const { return (unsigned int)m_textureHeight; };
+
+		std::pair<float, float> GetFirstUVPosition() { return m_topLeftPosition; };
+		std::pair<float, float> GetSecondUVPosition() { return m_bottomRightPosition; };
+
+		void UseSection(float x, float y, float width, float height);
 	};
 }

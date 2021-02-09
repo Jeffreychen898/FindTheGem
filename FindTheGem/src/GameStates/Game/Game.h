@@ -8,6 +8,10 @@ namespace GameStates
 	{
 	private:
 		std::vector<Rendering::Layers> m_layersToRender;
+
+		/* images */
+		Rendering::Texture m_backgroundImage;
+		Rendering::Texture m_tileImage;
 	public:
 		Game();
 		

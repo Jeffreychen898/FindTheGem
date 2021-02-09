@@ -166,6 +166,24 @@ namespace Rendering
 			texture.Bind();
 		}
 
+		std::pair<float, float> first_position = texture.GetFirstUVPosition();
+		std::pair<float, float> second_position = texture.GetSecondUVPosition();
+
+		float uv_top = first_position.second;
+		float uv_bottom = second_position.second;
+		float uv_left = first_position.first;
+		float uv_right = second_position.first;
+
+		float tex_coords[] = {
+			uv_left, uv_top,
+			uv_right, uv_top,
+			uv_right, uv_bottom,
+			uv_left, uv_bottom
+		};
+
+		for (unsigned int i = 0; i < 8; ++i)
+			m_texCoords[m_texCoordCounter + i] = tex_coords[i];
+
 		RenderRectangle(x, y, width, height);
 	}
 
@@ -177,6 +195,16 @@ namespace Rendering
 			m_currentTexture = m_whiteTexture.GetTexture();
 			m_whiteTexture.Bind();
 		}
+
+		float tex_coords[] = {
+			0.f, 1.f,
+			1.f, 1.f,
+			1.f, 0.f,
+			0.f, 0.f
+		};
+
+		for (unsigned int i = 0; i < 8; ++i)
+			m_texCoords[m_texCoordCounter + i] = tex_coords[i];
 
 		RenderRectangle(x, y, width, height);
 	}
@@ -206,13 +234,6 @@ namespace Rendering
 			starting_point, starting_point + 3, starting_point + 2
 		};
 
-		float tex_coords[] = {
-			0.f, 1.f,
-			1.f, 1.f,
-			1.f, 0.f,
-			0.f, 0.f
-		};
-
 		float colors[4] = { m_selectedColors.red, m_selectedColors.green, m_selectedColors.blue, m_selectedColors.alpha };
 
 		for (unsigned int i = 0; i < 12; ++i)
@@ -220,9 +241,6 @@ namespace Rendering
 
 		for (unsigned int i = 0; i < 6; ++i)
 			m_indices[m_indicesCounter + i] = indices[i];
-
-		for (unsigned int i = 0; i < 8; ++i)
-			m_texCoords[m_texCoordCounter + i] = tex_coords[i];
 
 		for (unsigned int i = 0; i < 16; ++i)
 			m_colors[m_colorCounter + i] = colors[i % 4];

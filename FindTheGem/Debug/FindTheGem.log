@@ -1,2 +1,6 @@
-﻿  Game.cpp
+﻿  Renderer.cpp
+  Game.cpp
+C:\Users\Jeffr\Desktop\C++ Workspace\Games\FindTheGem\FindTheGem\FindTheGem\src\GameStates\Game\Game.cpp(27,49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\Jeffr\Desktop\C++ Workspace\Games\FindTheGem\FindTheGem\FindTheGem\src\GameStates\Game\Game.cpp(27,39): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Generating Code...
   FindTheGem.vcxproj -> C:\Users\Jeffr\Desktop\C++ Workspace\Games\FindTheGem\FindTheGem\Debug\FindTheGem.exe

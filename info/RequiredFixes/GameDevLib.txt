@@ -1,2 +1,4 @@
 create an Init class for Window
 create another class for game camera that inherits from matrix class
+user keyboard, mouse, etc, event functions
+cropping image
